@@ -114,8 +114,9 @@ scaler + PCA + model, logs the signal, and routes the decision to Alpaca's
 - signal = FLAT and already long: close the position (market SELL)
 - signal = FLAT and no position: nothing to do
 
-Use `--dry-run` to log the decision without submitting an order. Run it
-during market hours to see the fill immediately in the Alpaca paper
+Use `--dry-run` to log the decision without submitting an order, and
+`--log-file demo/paper_trade_log.txt` to also save the logs as evidence. Run
+it during market hours to see the fill immediately in the Alpaca paper
 dashboard; outside market hours the order stays queued as a day order.
 
 **Paper trading only. No real money is ever used.**

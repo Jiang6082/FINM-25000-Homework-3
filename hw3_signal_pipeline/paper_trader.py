@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+from pathlib import Path
 
 import joblib
 from alpaca.data.enums import DataFeed
@@ -137,16 +138,22 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--feed", default="iex", choices=["iex", "sip"])
     parser.add_argument("--notional", type=float, default=10_000.0, help="Dollar size of a new BUY.")
     parser.add_argument("--dry-run", action="store_true", help="Log the decision, submit nothing.")
+    parser.add_argument("--log-file", default=None, help="Also write the logs to this file.")
     return parser.parse_args()
 
 
 def main() -> None:
+    args = parse_args()
+    handlers: list[logging.Handler] = [logging.StreamHandler()]
+    if args.log_file:
+        Path(args.log_file).parent.mkdir(parents=True, exist_ok=True)
+        handlers.append(logging.FileHandler(args.log_file, encoding="utf-8"))
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=handlers,
     )
-    args = parse_args()
     feed = DataFeed.IEX if args.feed == "iex" else DataFeed.SIP
     run_once(args.ticker.upper().strip(), args.artifact, args.years, feed, args.notional, args.dry_run)
 
