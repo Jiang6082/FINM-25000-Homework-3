@@ -2,9 +2,9 @@
 
 Machine-learning trading signal using Alpaca market data and paper-trading-safe infrastructure.
 
-## Current Work Split
+## Team Contributions
 
-Charles owns:
+Charles (Jiang6082):
 
 - Alpaca daily OHLCV data retrieval
 - Feature engineering
@@ -14,15 +14,17 @@ Charles owns:
 - Signal/PCA charts
 - Repo organization and README
 
-Patrick owns:
+Patrick (patrickliu77):
 
 - Long-only backtest
 - Performance metrics
 - Paper-trading order execution demo
-- Alpaca dashboard screenshots/logs
+- Trade logs and demo evidence
 - Final video recording/editing
 
 ## Setup
+
+macOS/Linux:
 
 ```bash
 python3 -m venv .venv
@@ -31,9 +33,18 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
 Fill in `.env` with Alpaca credentials. Use paper-trading credentials and paper-only accounts for the demo.
 
-## Generate Charles's Signal Output
+## Run The Signal Pipeline
 
 ```bash
 python -m hw3_signal_pipeline.run_pipeline --ticker AAPL
@@ -53,9 +64,9 @@ The pipeline saves:
 - `outputs/<ticker>/feature_correlation.png`
 - `models/<ticker>_signal_model.joblib`
 
-## Interface For Patrick
+## Signal Dataset Columns
 
-Patrick can backtest from `signal_dataset.csv`. The most important columns are:
+The backtest consumes `signal_dataset.csv`. The most important columns are:
 
 - `close`: close price
 - `forward_return`: next-day return used to define the target
@@ -77,7 +88,7 @@ python -m hw3_signal_pipeline.latest_signal --ticker AAPL --artifact models/AAPL
 
 This script only prints the latest signal. It does not submit orders. The paper-trading execution script should remain paper-only.
 
-## Patrick's Backtest
+## Run The Backtest
 
 After generating the signal dataset, backtest the ML signal against Buy & Hold:
 
