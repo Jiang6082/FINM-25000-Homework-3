@@ -137,9 +137,11 @@ pytest
 
 ## Video
 
-Video link: _add the unlisted YouTube link here before submission_.
+Video: [`demo/finm25000-hw3-demo.mp4`](demo/finm25000-hw3-demo.mp4) (in this
+repository). The paper-trading logs from the recorded run are in
+[`demo/paper_trade_log.txt`](demo/paper_trade_log.txt).
 
-The 3-6 minute video shows the code running, the charts (equity curve,
-drawdown, PCA variance), the backtest results, the Alpaca paper trading
-dashboard, and a paper trade being executed -- with the statement:
-"This is paper trading only -- no real money is used."
+The video shows the code running, the charts (equity curve, drawdown, PCA
+variance), the backtest results, the Alpaca paper trading dashboard, and a
+paper trade being executed -- with the statement: "This is paper trading
+only -- no real money is used."

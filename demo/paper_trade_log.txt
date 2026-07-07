@@ -1,0 +1,11 @@
+2026-07-07 09:50:16 [INFO] ====================================================================
+2026-07-07 09:50:16 [INFO] Alpaca PAPER trading demo -- no real money is used.
+2026-07-07 09:50:16 [INFO] ====================================================================
+2026-07-07 09:50:16 [INFO] Fetching latest daily bars for AAPL from Alpaca...
+2026-07-07 09:50:17 [INFO] Loaded 1260 daily bars (2021-06-29 -> 2026-07-07).
+2026-07-07 09:50:17 [INFO] Computing features and applying the saved scaler + PCA + model...
+2026-07-07 09:50:17 [INFO] SIGNAL AAPL date=2026-07-07 04:00:00+00:00 model_prob=0.3931 threshold=0.60 -> FLAT
+2026-07-07 09:50:17 [INFO] Connected to PAPER account: status=AccountStatus.ACTIVE buying_power=$3987996.03
+2026-07-07 09:50:17 [INFO] Current position: 32.04771977 shares of AAPL.
+2026-07-07 09:50:17 [INFO] ORDER submitted: id=3dd7215c-8ea8-49bf-8375-6ff116e8e9f4 side=sell status=OrderStatus.PENDING_NEW
+2026-07-07 09:50:17 [INFO] Done. Review the trade in the Alpaca paper dashboard.
