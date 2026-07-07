@@ -137,7 +137,7 @@ pytest
 
 ## Video
 
-Video: [`demo/finm25000-hw3-demo.mp4`](demo/finm25000-hw3-demo.mp4) (in this
+Video: [`demo/finm25000_hw3_demo.mp4`](demo/finm25000_hw3_demo.mp4) (in this
 repository). The paper-trading logs from the recorded run are in
 [`demo/paper_trade_log.txt`](demo/paper_trade_log.txt).
 
